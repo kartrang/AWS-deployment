@@ -17,7 +17,7 @@ RUN python -m pip install --upgrade pip setuptools wheel
 RUN pip install --no-cache-dir --require-hashes=false -r /app/requirements.txt
 
 # Copy application source
-COPY ./voicechat /app
+COPY . /app
 
 EXPOSE 8501
 
@@ -26,3 +26,4 @@ ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
 
 # Run the Streamlit app
 CMD ["streamlit", "run", "rag_voice.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+
