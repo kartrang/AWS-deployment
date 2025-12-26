@@ -1,0 +1,26 @@
+# Core dependencies
+streamlit
+openai
+openai-agents
+python-dotenv
+
+# Vector database
+qdrant-client
+fastembed
+
+# Document processing
+langchain
+langchain-community
+langchain-openai
+pypdf
+python-docx
+python-pptx
+
+# Audio processing
+sounddevice
+pydub
+elevenlabs
+
+# Image processing
+Pillow
+openpyxl

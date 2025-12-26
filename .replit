@@ -1,0 +1,51 @@
+modules = ["python-3.11"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["bash", "ffmpeg", "ffmpeg-full", "portaudio"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Streamlit App"
+
+[[workflows.workflow]]
+name = "Streamlit App"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "streamlit run rag_voice.py"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 32831
+externalPort = 3002
+
+[[ports]]
+localPort = 44397
+externalPort = 3001
+
+[[ports]]
+localPort = 44687
+externalPort = 3000
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["streamlit", "run", "rag_voice.py", "--server.port=5000", "--server.address=0.0.0.0"]
