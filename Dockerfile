@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy requirements and install Python deps
 COPY ./requirements.txt /app/requirements.txt
 RUN python -m pip install --upgrade pip setuptools wheel
-RUN pip install --no-cache-dir --require-hashes=false -r /app/requirements.txt
+RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy application source
 COPY . /app
@@ -26,5 +26,6 @@ ENV STREAMLIT_SERVER_ADDRESS=0.0.0.0
 
 # Run the Streamlit app
 CMD ["streamlit", "run", "rag_voice.py", "--server.port", "8501", "--server.address", "0.0.0.0"]
+
 
 
