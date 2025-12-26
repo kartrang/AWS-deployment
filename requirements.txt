@@ -1,26 +1,26 @@
 # Core dependencies
-streamlit
-openai
-openai-agents
-python-dotenv
+streamlit==1.20.0
+openai==0.27.0
+openai-agents==0.1.0
+python-dotenv==0.21.0
 
 # Vector database
-qdrant-client
-fastembed
+qdrant-client==1.2.0
+fastembed==0.1.0
 
 # Document processing
-langchain
-langchain-community
-langchain-openai
-pypdf
-python-docx
-python-pptx
+langchain==0.0.200
+langchain-community==0.0.20
+langchain-openai==0.0.6
+pypdf==3.8.0
+python-docx==0.8.11
+python-pptx==0.6.21
 
 # Audio processing
-sounddevice
-pydub
-elevenlabs
+sounddevice==0.4.5
+pydub==0.25.1
+elevenlabs==0.2.0
 
-# Image processing
-Pillow
-openpyxl
+# Image / Office processing
+Pillow==9.4.0
+openpyxl==3.0.10
